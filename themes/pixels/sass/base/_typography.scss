@@ -1,0 +1,144 @@
+a {
+  color: lighten($blue, 25%);
+  text-decoration: none;
+  @include transition(.2s, color);
+  &:hover, &:focus {
+    color: $blue;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: .5em 0 1em 0;
+  color: lighten($black, 10%);
+}
+
+h1 {
+  @include font-size(36px);
+}
+
+h2 {
+  @include font-size(26px);
+}
+
+h3 {
+  @include font-size(22px);
+}
+
+h4 {
+  @include font-size(18px)
+}
+
+h5 {
+  @include font-size(14px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h6 {
+  @include font-size(12px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0 0 1.5em 0;
+}
+
+.pager {
+  a {
+    color: lighten($black, 30%);
+    font-weight: normal;
+    &:hover, &:focus {
+      color: $black;
+      border-bottom: 1px dotted;
+    }
+  }
+  .is-active {
+    a {
+      color: $black;
+      font-weight: 600;
+    }
+  }
+}
+
+.page-title, .hero-title {
+  margin: .5em 0 .5em 0;
+  &:after {
+    @include heading-border;
+  }
+}
+
+pre {
+  background: lighten($black, 80%);
+  padding: 1.5em;
+  border-left: 3px solid $blue;
+  font-family: "Lucida Console", monospace;
+  word-break: break-all;
+}
+
+blockquote {
+  background: lighten($black, 80%);
+  border-left: 2px solid $blue;
+  font-style: italic;
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  &:before {
+    color: $blue;
+    content: "\201C";
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -0.4em;
+  }
+  &:after {
+    color: $blue;
+    content: "\201D";
+    font-size: 3em;
+    line-height: 0.1em;
+    vertical-align: -0.45em;
+  }
+  p {
+    padding: 0 0 0 1em;
+    margin-bottom: .5em;
+    @include font-size(18px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+table {
+  border: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 2em;
+  width: 100%;
+  @include font-size(14px);
+  thead {
+    th {
+      font-weight: 600;
+      color: $blue;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+  tr {
+    background: transparent;
+    @include transition(.25s, background);
+    th, td {
+      border: none;
+      border-bottom: 1px solid lighten($black, 65%);
+      padding: .5em 1em;
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        background: lighten($black, 75%);
+      }
+    }
+  }
+}

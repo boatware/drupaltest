@@ -1,0 +1,36 @@
+name: Pixels
+type: theme
+description: Simple, minimalistic, clean & responsive Drupal 8 theme.
+package: Other
+base theme: classy
+# core: 8.x
+libraries:
+  - pixels/superfish
+  - pixels/global-styling
+regions:
+  header: Header
+  top_menu: 'Top Menu'
+  ad_space: 'Ad Space'
+  navigation: 'Main Navigation'
+  help: Help
+  highlighted: Highlighted
+  featured: 'Featured'
+  content: Content
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  featured_bottom: 'Featured Bottom'
+  content_bottom: 'Content Bottom'
+  bottom_sidebar_first: 'Bottom Left Sidebar'
+  bottom_sidebar_second: 'Bottom Right Sidebar'
+  footer_top: 'Footer top'
+  footer_first: 'Footer first column'
+  footer_middle: 'Footer middle column'
+  footer_last: 'Footer last column'
+  footer_bottom: 'Footer bottom'
+  off_canvas: 'Off canvas'
+
+# Information added by Drupal.org packaging script on 2016-11-24
+version: '8.x-2.0'
+core: '8.x'
+project: 'pixels'
+datestamp: 1479967108

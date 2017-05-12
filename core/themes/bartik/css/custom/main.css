@@ -1,0 +1,30 @@
+/** SITE BRANDING STYLE OVERRIDE */
+.site-branding {
+    font-size: 25pt;
+    font-weight: bold;
+    font-family: monospace;
+    width: 100%;
+    text-align: center;
+}
+
+/** MENU STYLING */
+#block-170510-menu-main-menu > menu-item {
+    padding: 0 0 0 0 !important;
+    margin: 0 0 0 0 !important;
+}
+
+.region-primary-menu .menu a {
+    border-radius: 0px;
+}
+
+@media (min-width: 901px) {
+    .region-primary-menu .menu-item, body:not(:target) .region-primary-menu .menu-item {
+        float: left;
+        list-style: none;
+        padding: 0 0 0 0 !important;
+        margin: 0 0 0 0 !important;
+        width: auto;
+        height: auto;
+        overflow: visible;
+    }
+}

@@ -1,0 +1,169 @@
+#header {
+  background: $blue;
+  a {
+    color: white;
+  }
+  .contextual {
+    a {
+      color: $black;
+    }
+  }
+}
+
+.page-top {
+  background: $black;
+  padding: 10px 0;
+}
+
+.region-top-menu {
+  ul {
+    @include zero;
+  }
+  li {
+    @include zero;
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+  }
+  .menu {
+    float: right;
+  }
+}
+
+.branding {
+  min-height: 125px;
+  @include display-table;
+  color: white;
+  .site-branding {
+    float: none;
+    clear: both;
+    text-align: center;
+    @include font-size(12px);
+    @include bp-medium {
+      text-align: left;
+      min-width: 10em;
+      .site-logo {
+        float: left;
+        margin-right: 1em;
+      }
+      .site-name {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        @include font-size(30px);
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.off-canvas {
+  float: right;
+  #burger-menu {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../../pixels/img/hamburger.svg) no-repeat;;
+    background-size: 20px;
+    margin-top: .8em;
+  }
+  @media screen and (max-width: $screen-small) {
+    display: none;
+  }
+}
+
+.push-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  .pm-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+  .pm-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    border-left: 1px solid #e3e3e3;
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    transform: translateX(300px);
+    @include transition(.25s, all);
+    .pm-wrap {
+      margin: 44px;
+      margin-bottom: 35px;
+      padding-top: 60px;
+      position: relative;
+      .close-menu {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+        &:before, &:after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          height: 4px;
+          background-color: #000;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -2px;
+        }
+      }
+      ul {
+        li {
+          display: block;
+          float: none;
+          clear: both;
+        }
+      }
+    }
+  }
+  &.show-pm {
+    visibility: visible;
+    opacity: 1;
+    .pm-overlay {
+      opacity: 1;
+    }
+    .pm-container {
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+  }
+  .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+}

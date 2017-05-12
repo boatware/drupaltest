@@ -1,0 +1,65 @@
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin bp-large {
+  @media only screen and (min-width: $screen-large) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: $screen-medium) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (min-width: $screen-small) {
+    @content;
+  }
+}
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin transition($delay, $property) {
+
+  -webkit-transition: $delay $property ease-out;
+  -moz-transition: $delay $property ease-out;
+  -ms-transition: $delay $property ease-out;
+  -o-transition: $delay $property ease-out;
+  transition: $delay $property ease-out;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin display-table {
+  display: table;
+  width: 100%;
+  > div {
+    display: block;
+    position: relative;
+    @include bp-medium {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+@mixin heading-border {
+  content: '';
+  width: 15%;
+  height: 2px;
+  display: block;
+  background-color: lighten($black, 70%);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

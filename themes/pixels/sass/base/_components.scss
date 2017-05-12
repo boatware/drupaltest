@@ -1,0 +1,156 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: lighten($black, 20%);
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  position: relative;
+  @include transition(.25s, all);
+  &.off-canvas-active {
+    margin-right: 300px;
+  }
+  @media screen and (min-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.layout-container {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 75em;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.row {
+  @include zero
+}
+
+.col {
+  float: none;
+  padding: 0 12px;
+  @include bp-medium {
+    float: left;
+  }
+}
+
+.hide-large {
+  @media screen and (min-width: $screen-medium) {
+    display: none !important;
+  }
+}
+
+.hide-medium {
+  @media screen and (min-width: $screen-small) and (max-width: $screen-medium) {
+    display: none !important;
+  }
+}
+
+.hide-small {
+  @media screen and (max-width: $screen-small) {
+    display: none !important;
+  }
+}
+
+.vw-25 {
+  @include bp-medium {
+    width: 25%;
+  }
+}
+
+.vw-50 {
+  @include bp-medium {
+    width: 50%;
+  }
+}
+
+.vw-75 {
+  @include bp-medium {
+    width: 75%;
+  }
+}
+
+.vw-33 {
+  @include bp-medium {
+    width: 33.33%;
+  }
+}
+
+.offset-25 {
+  @include bp-medium {
+    margin-left: 12.5%;
+  }
+}
+
+.offset-50 {
+  @include bp-medium {
+    margin-left: 25%;
+  }
+}
+
+.offset-75 {
+  @include bp-medium {
+    margin-left: 32.5%;
+  }
+}
+
+.mv1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mv2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mv3 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mv4 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.mv5 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.breadcrumb {
+  @include zero;
+  @include font-size(14px);
+  li {
+    &:before {
+      content: '//';
+      margin: 0 .75em 0 .5em;
+      letter-spacing: -4px;
+    }
+    &:last-child {
+      color: lighten($black, 50%);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<?php
+
+use \Drupal\Core\Form\FormStateInterface;
+
+function fluffiness_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
+    // Work-around for a core bug affecting admin themes. See issue #943212.
+    if (isset($form_id)) {
+        return;
+    }
+    
+    $form['fluffiness_example'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Widget'),
+        '#default_value' => theme_get_setting('fluffiness_example'),
+        '#description' => t("Place this text in the widget spot on your site.")
+    );
+}
+
+function fluffiness_preprocess_node(&$variables) {
+    $variables['fluffiness_example'] = theme_get_setting('foo_example');
+}
+
+?>

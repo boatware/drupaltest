@@ -1,0 +1,128 @@
+.main-navigation {
+  background: lighten($blue, 4%);
+  .navigation-wrapper {
+    float: left;
+  }
+  .menu {
+    li {
+      display: inline;
+      background: lighten($blue, 4%);
+      a {
+        display: block;
+        padding: 15px;
+        font-size: .9em;
+        text-transform: uppercase;
+        @include transition(.5s, background);
+        &.is-active {
+          background: lighten($blue, 15%);;
+          color: white;
+        }
+      }
+      &:hover {
+        background: white;
+        > a {
+          color: lighten($black, 25%) !important;
+        }
+      }
+      &.menu-item--expanded {
+        a {
+          padding-right: 25px;
+          .sf-sub-indicator {
+            &:after {
+              @include font-size(8px);
+              top: 30%;
+              left: 30%;
+            }
+          }
+        }
+      }
+    }
+    &.sub-menu[data-menu-level="1"] {
+      margin-top: 4px;
+      margin-left: -1px;
+    }
+    &.sub-menu {
+      border: 1px solid #eee;
+      border-top: none;
+      box-sizing: content-box;
+      .menu-item {
+        background: white;
+        a {
+          color: lighten($black, 25%) !important;
+          margin-left: 0;
+          @include transition(.25s, margin);
+          &:hover {
+            margin-left: 5px;
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .menu-item--expanded {
+
+      }
+    }
+  }
+  .sf-menu-wrapper {
+    display: table;
+    min-height: 40px;
+    position: relative;
+    width: 100%;
+    #hamburger {
+      display: block;
+      vertical-align: middle;
+      background: url(../../pixels/img/hamburger.svg) no-repeat;
+      background-size: contain;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      margin-top: .6em;
+    }
+    #close {
+      display: none;
+      vertical-align: middle;
+      background: url(../../pixels/img/ex.svg) no-repeat;
+      background-size: contain;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      margin-top: .6em;
+      margin-bottom: 1.2em;
+    }
+    .sf-menu {
+      &.mobile-active {
+        display: block !important;
+        min-width: 80% !important;
+        .menu-item {
+          display: block;
+          float: none;
+          clear: both;
+          .mobnav-subarrow {
+            display: block;
+            background-color: #0f3975;
+            opacity: 0;
+            height: 100%;
+            width: 3em;
+            position: absolute;
+            top: 0;
+            right: .1em;
+            cursor: pointer;
+          }
+          ul {
+            display: none !important;
+            position: static !important;
+            width: 100%;
+            margin: 0;
+            border: none;
+          }
+          &.xpopdrop {
+            ul {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
