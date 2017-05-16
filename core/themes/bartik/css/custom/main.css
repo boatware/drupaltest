@@ -1,3 +1,6 @@
+/** FONTS IMPORT */
+@import url('https://fonts.googleapis.com/css?family=Lobster|Luckiest+Guy|Pacifico|Rokkitt|Satisfy');
+
 /** SITE BRANDING STYLE OVERRIDE */
 .site-branding {
     font-size: 25pt;
@@ -28,3 +31,59 @@
         overflow: visible;
     }
 }
+
+/* 1705161101 */
+
+/* HEADINGS */
+h1.a170510 {
+    font-size: 36pt;
+    text-transform: none;
+}
+
+h2.a170510 {
+    font-size: 33pt;
+    text-transform: none;
+}
+
+h3.a170510 {
+    font-size: 30pt;
+    text-transform: none;
+}
+
+h4.a170510 {
+    font-size: 27pt;
+    text-transform: none;
+}
+
+h5.a170510 {
+    font-size: 24pt;
+    text-transform: none;
+}
+
+h6.a170510 {
+    font-size: 21pt;
+    text-transform: none;
+}
+
+/* FONT VARIATIONS */
+.a170510.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.a170510.pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+.a170510.rokkitt {
+    font-family: 'Rokkitt', serif;
+}
+
+.a170510.satisfy {
+    font-family: 'Satisfy', cursive;
+}
+
+.a170510.luckiest-guy {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+/* END OF 170516 */
