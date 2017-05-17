@@ -35,6 +35,12 @@
 /* 1705161101 */
 
 /* HEADINGS */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Tahoma;
+
+}
+
 h1.a170510 {
     font-size: 36pt;
     text-transform: none;
@@ -87,3 +93,11 @@ h6.a170510 {
 }
 
 /* END OF 170516 */
+
+/* 170517 */
+
+.a170510.img.home {
+
+}
+
+/* END OF 170717 */
